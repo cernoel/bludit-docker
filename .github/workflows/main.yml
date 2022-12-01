@@ -7,8 +7,7 @@ on:
       - 'main'
       - 'dev'
     tags:
-      - 'v*'
-      - 'latest'
+      - '*'
   pull_request:
     branches:
       - 'main'
