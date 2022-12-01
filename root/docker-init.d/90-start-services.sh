@@ -3,7 +3,7 @@
 echo "[+] Starting services ..."
 
 echo "  - php-fpm ..."
-php-fpm7 --daemonize
+php-fpm8 --daemonize
 
 echo "  - nginx ..."
 nginx -g "daemon off;"

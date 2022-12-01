@@ -1,7 +1,7 @@
-FROM alpine:3.15
+FROM alpine:latest
 
-LABEL maintainer="Manuel Laug <laugmanuel@gmail.com>"
-LABEL name="laugmanuel/bludit"
+LABEL maintainer="cernoel"
+LABEL name="cernoel/bludit-docker"
 
 RUN addgroup -g 555 -S nginx \
     && adduser -SD -u 555 -h /usr/share/nginx -s /sbin/nologin -G nginx -g nginx nginx \
@@ -10,15 +10,15 @@ RUN addgroup -g 555 -S nginx \
          ruby-json \
          jq \
          nginx \
-         php7 \
-         php7-fpm \
-         php7-curl \
-         php7-dom \
-         php7-gd \
-         php7-json \
-         php7-mbstring \
-         php7-openssl \
-         php7-session \
+         php8 \
+         php8-fpm \
+         php8-curl \
+         php8-dom \
+         php8-gd \
+         php8-json \
+         php8-mbstring \
+         php8-openssl \
+         php8-session \
     && mkdir -p /bludit /usr/share/nginx/html
 
 RUN BLUDIT_VERSION=$(curl -sq https://api.github.com/repos/bludit/bludit/releases/latest | jq -r '.tag_name') \
