@@ -7,7 +7,8 @@ on:
       - 'main'
       - 'dev'
     tags:
-      - 'v*.*.*'
+      - 'v*'
+      - 'latest'
   pull_request:
     branches:
       - 'main'
