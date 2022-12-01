@@ -1,7 +1,13 @@
-FROM alpine:latest
+FROM alpine:3.17
 
 LABEL maintainer="cernoel"
 LABEL name="cernoel/bludit-docker"
+
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+RUN apk --no-cache upgrade
 
 RUN addgroup -g 555 -S nginx \
     && adduser -SD -u 555 -h /usr/share/nginx -s /sbin/nologin -G nginx -g nginx nginx \
